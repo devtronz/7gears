@@ -2,309 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>7 Gears Event</title>
-  <!-- Google Fonts for modern typography -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Gears Car & Bike Fest 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-      min-height: 100vh;
-    }
-    header {
-      background: linear-gradient(90deg, #232526 0%, #485563 100%);
-      color: #fff;
-      padding: 24px 0 0 0;
-      box-shadow: 0 2px 10px rgba(44, 62, 80, .05);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.4em;
-      margin: 0 0 10px 0;
-      letter-spacing: 2px;
-      text-align: center;
-      font-weight: 700;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      margin-bottom: 10px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1em;
-      transition: color 0.2s;
-      padding: 6px 16px;
-      border-radius: 20px;
-    }
-    nav a:hover, nav a.active {
-      background: #fff;
-      color: #485563;
-    }
-    .hero {
-      background: linear-gradient(105deg, #485563 60%, #29323c 100%), url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      color: #fff;
-      padding: 90px 20px 60px 20px;
-      text-align: center;
-      box-shadow: 0 4px 24px rgba(44, 62, 80, .15);
-      border-radius: 0 0 32px 32px;
-      position: relative;
-    }
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3em;
-      margin-bottom: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-shadow: 0 4px 24px rgba(44, 62, 80, .3);
-    }
-    .hero p {
-      font-size: 1.5em;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-      font-weight: 400;
-      text-shadow: 0 2px 9px rgba(44, 62, 80, .2);
-    }
-    .hero img {
-      width: 100%;
-      max-width: 340px;
-      border-radius: 16px;
-      margin: 24px auto 0 auto;
-      box-shadow: 0 8px 32px rgba(44, 62, 80, .25);
-      display: block;
-    }
-    .container {
-      max-width: 900px;
-      margin: 42px auto 0 auto;
-      padding: 0 20px 40px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
-    }
-    .card {
-      flex: 1 1 340px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px 28px;
-      box-shadow: 0 8px 32px rgba(44, 62, 80, .09);
-      margin-top: 0;
-      min-width: 320px;
-      animation: fadeIn 1.2s cubic-bezier(.5,.3,.7,1) 0s 1;
-      transition: box-shadow 0.2s;
-    }
-    .card:hover {
-      box-shadow: 0 12px 48px rgba(44, 62, 80, .14);
-    }
-    .card h2 {
-      font-family: 'Montserrat', sans-serif;
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 1.45em;
-      font-weight: 700;
-      color: #485563;
-    }
-    .countdown {
-      text-align: center;
-      margin: 20px 0 0 0;
-      font-size: 2.1em;
-      color: #232526;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      animation: fadeIn 2s ease-in;
-      letter-spacing: 2px;
-      background: #f0f4f8;
-      border-radius: 16px;
-      padding: 18px 0;
-      box-shadow: 0 2px 12px rgba(44, 62, 80, .07);
-    }
-    .form-container form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .form-container input {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d3dae6;
-      border-radius: 8px;
-      font-size: 1em;
-      margin-bottom: 8px;
-      transition: border 0.2s;
-    }
-    .form-container input:focus {
-      border: 1.5px solid #485563;
-      outline: none;
-    }
-    .form-container button {
-      padding: 12px 0;
-      background: linear-gradient(90deg, #485563 60%, #232526 100%);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1em;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 6px;
-      transition: background 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 12px rgba(44, 62, 80, .06);
-    }
-    .form-container button:hover {
-      background: linear-gradient(90deg, #232526 60%, #485563 100%);
-      box-shadow: 0 4px 18px rgba(44, 62, 80, .12);
-    }
-    .chat-messages {
-      max-height: 160px;
-      overflow-y: auto;
-      margin-bottom: 8px;
-      background: #f8fafd;
-      border-radius: 8px;
-      padding: 10px;
-      border: 1px solid #e2e7ef;
-    }
-    .chat-message {
-      background: #f1f1f6;
-      padding: 11px 14px;
-      border-radius: 8px;
-      margin-bottom: 7px;
-      font-size: .99em;
-    }
-    .chat-container input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #d3dae6;
-      margin-bottom: 10px;
-      font-size: 1em;
-    }
-    .chat-container button {
-      background: linear-gradient(90deg, #485563 60%, #232526 100%);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 0;
-      font-size: 1em;
-      font-weight: 700;
-      width: 100%;
-      cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 12px rgba(44, 62, 80, .06);
-    }
-    .chat-container button:hover {
-      background: linear-gradient(90deg, #232526 60%, #485563 100%);
-      box-shadow: 0 4px 18px rgba(44, 62, 80, .12);
-    }
-    footer {
-      background: linear-gradient(90deg, #232526 0%, #485563 100%);
-      color: #fff;
-      text-align: center;
-      padding: 16px 0;
-      font-size: 1.09em;
-      border-radius: 24px 24px 0 0;
-      box-shadow: 0 -2px 18px rgba(44, 62, 80, .04);
-      margin-top: 30px;
-      position: relative;
-    }
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-        gap: 28px;
-        padding: 0 6vw 40px 6vw;
-      }
-      .card {
-        min-width: unset;
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(16px);}
-      to { opacity: 1; transform: none;}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>7 Gears</h1>
-    <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#details">Event Details</a>
-      <a href="#register">Register</a>
-      <a href="#chat">Chat</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo">7 Gears</div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
   <section class="hero" id="home">
-    <h1>7 Gears Event 2025</h1>
-    <p>Join us for an exciting car & bike event</p>
-    <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Cars and bikes">
+    <div class="hero-content">
+      <h1>Car & Bike Fest 2025</h1>
+      <p>Experience the thrill of speed and style.<br>Join us for a spectacular showcase of automotive excellence!</p>
+      <a href="#register" class="cta-btn">Register Now</a>
+    </div>
   </section>
-  <main class="container">
-    <section class="card event-details" id="details">
-      <h2>Event Details</h2>
-      <p><strong>Date:</strong> 25th February 2025</p>
-      <p><strong>Location:</strong> Central Park</p>
-      <p><strong>Description:</strong> A thrilling event featuring the best cars and bikes. Enjoy exhibitions, test drives, live demos, food, and fun activities for all ages.</p>
+  <main>
+    <section class="about" id="about">
+      <div class="about-content">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=700&q=80" alt="Event Cars" class="about-img">
+        <div>
+          <h2>About The Event</h2>
+          <p>
+            Join enthusiasts and collectors at Central Park on <strong>25th February 2025</strong> for a day packed with stunning cars, roaring bikes, live demonstrations, food trucks, and family fun! Whether you’re a gearhead or just love a good show, there’s something for everyone.
+          </p>
+          <ul>
+            <li>Supercar & superbike showcases</li>
+            <li>Test drives & live demos</li>
+            <li>Food, music & entertainment</li>
+            <li>Community contests & giveaways</li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section class="card countdown" id="countdown">
-      Event starts in: <span id="countdown-timer"></span>
-    </section>
-    <section class="card form-container" id="register">
-      <h2>Register</h2>
-      <form action="http://localhost:3000/register" method="POST">
-        <input type="text" id="register-username" name="username" placeholder="Username" required>
-        <input type="password" id="register-password" name="password" placeholder="Password" required>
-        <button type="submit">Register</button>
+    <section class="register-section" id="register">
+      <h2>Register Now</h2>
+      <form class="register-form" action="http://localhost:3000/register" method="POST">
+        <input type="text" name="username" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <button type="submit">Sign Up</button>
       </form>
     </section>
-    <section class="card chat-container" id="chat">
-      <h2>Community Chat</h2>
-      <div class="chat-messages" id="chat-messages"></div>
-      <input type="text" id="chat-input" placeholder="Type a message...">
-      <button onclick="sendMessage()">Send</button>
+    <section class="countdown-section">
+      <h2>Countdown to the Event</h2>
+      <div class="countdown" id="countdown-timer"></div>
     </section>
   </main>
   <footer>
-    <p>Contact us: info@7gears.com</p>
+    <div class="footer-content">
+      <span>Contact: <a href="mailto:info@7gears.com">info@7gears.com</a></span>
+      <span>&copy; 2025 7 Gears Event. All rights reserved.</span>
+    </div>
   </footer>
   <script>
     // Countdown Timer Script
-    const countdown = () => {
+    function countdown() {
       const eventDate = new Date("2025-02-25T09:00:00");
       const now = new Date();
       const diff = eventDate - now;
+      const timer = document.getElementById('countdown-timer');
       if (diff <= 0) {
-        document.getElementById('countdown-timer').innerText = "The event has started!";
+        timer.textContent = "The event has started!";
         return;
       }
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const secs = Math.floor((diff % (1000 * 60)) / 1000);
-      document.getElementById('countdown-timer').innerText =
-        `${days}d ${hours}h ${mins}m ${secs}s`;
+      timer.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
       setTimeout(countdown, 950);
-    };
-    countdown();
-    // Dummy Chat Script
-    function sendMessage() {
-      const input = document.getElementById('chat-input');
-      const msg = input.value.trim();
-      if (!msg) return;
-      const chat = document.getElementById('chat-messages');
-      const msgDiv = document.createElement('div');
-      msgDiv.className = 'chat-message';
-      msgDiv.textContent = msg;
-      chat.appendChild(msgDiv);
-      chat.scrollTop = chat.scrollHeight;
-      input.value = '';
     }
+    countdown();
   </script>
 </body>
 </html>
