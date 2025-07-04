@@ -15,6 +15,9 @@
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#faq">FAQ</a>
         <a href="#register">Register</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -61,6 +64,81 @@
         <img src="https://images.unsplash.com/photo-1471478331149-c72f17e33c73?auto=format&fit=crop&w=400&q=80" alt="Bike 2">
         <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c8b?auto=format&fit=crop&w=400&q=80" alt="Car 3">
         <img src="https://images.unsplash.com/photo-1469530464725-6085fd8b7035?auto=format&fit=crop&w=400&q=80" alt="Bike 3">
+      </div>
+    </section>
+    <section class="schedule-section" id="schedule">
+      <h2>Event Schedule</h2>
+      <div class="schedule-table">
+        <div class="schedule-row">
+          <span class="schedule-time">09:00</span>
+          <span class="schedule-activity">Gates Open, Registration & Breakfast</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">10:00</span>
+          <span class="schedule-activity">Supercar & Superbikes Parade</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">11:00</span>
+          <span class="schedule-activity">Live Drag Race Demo</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">12:00</span>
+          <span class="schedule-activity">Food Trucks & Music (Main Stage)</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">13:00</span>
+          <span class="schedule-activity">Stunt Show & Photo Booth</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">14:30</span>
+          <span class="schedule-activity">Test Drives & Demo Rides</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">16:00</span>
+          <span class="schedule-activity">Contests & Giveaways</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-time">18:00</span>
+          <span class="schedule-activity">Closing Ceremony & Thank You</span>
+        </div>
+      </div>
+    </section>
+    <section class="sponsors-section" id="sponsors">
+      <h2>Our Sponsors</h2>
+      <div class="sponsors-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Ferrari_Logo.svg" alt="Ferrari">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Lamborghini_Logo.svg" alt="Lamborghini">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/BMW_logo_%28gray%29.svg" alt="BMW">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Kawasaki_Logo.svg" alt="Kawasaki">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Suzuki-logo.svg" alt="Suzuki">
+      </div>
+    </section>
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Do I need a ticket to attend?</button>
+          <div class="faq-answer">Pre-registration is recommended for a fast entry, but you can also register on-site (subject to availability).</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is parking available?</button>
+          <div class="faq-answer">Yes, there is dedicated parking for both cars and bikes at Central Park.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I bring my kids?</button>
+          <div class="faq-answer">Absolutely! The event is family-friendly and there are activities for all ages.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are pets allowed?</button>
+          <div class="faq-answer">Pets are welcome as long as they are leashed and well-behaved.</div>
+        </div>
+      </div>
+    </section>
+    <section class="map-section" id="contact">
+      <h2>Event Location</h2>
+      <p>Central Park, Main City, Country</p>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Central+Park,New+York,NY&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
     <section class="register-section" id="register">
@@ -113,6 +191,19 @@
       setTimeout(countdown, 950);
     }
     countdown();
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        if (this.classList.contains('active')) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = null;
+        }
+      });
+    });
   </script>
 </body>
 </html>
