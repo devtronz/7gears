@@ -249,4 +249,16 @@ footer {
 }
 @media (max-width: 400px) {
   .card { min-width: unset; }
+} 
+
+.collapsible-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+  will-change: transform;
+}
+.collapsible-header.collapsed {
+  transform: translateY(-100%);
+  box-shadow: none;
 }
