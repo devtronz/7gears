@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/883/883407.png" alt="7 Gears">
+      <span>Loading...</span>
+    </div>
+  </div>
   <header class="collapsible-header">
     <div class="navbar">
       <div class="logo"><img src="https://cdn-icons-png.flaticon.com/512/883/883407.png" alt="7 Gears logo" class="logo-img"> 7 Gears</div>
@@ -36,7 +43,7 @@
     </div>
   </section>
   <main>
-    <section class="about" id="about">
+    <section class="about fade-in" id="about">
       <div class="about-content">
         <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=700&q=80" alt="Event Cars" class="about-img">
         <div>
@@ -56,28 +63,26 @@
         </div>
       </div>
     </section>
-
-    <!-- Replace the Gallery section with this improved version -->
-<section class="gallery" id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-grid beautiful-gallery">
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=800&q=80" alt="Car Event">
-      <div class="gallery-caption">
-        <span>Classic Red Sports Car</span>
+    <section class="gallery fade-in" id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-modern">
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=800&q=80" alt="Car">
+          <div class="gallery-desc">
+            <h3>Classic Red Sports Car</h3>
+            <p>Elegance meets power.</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80" alt="Bike">
+          <div class="gallery-desc">
+            <h3>Blue Roadster Bike</h3>
+            <p>Ready for the adventure.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80" alt="Bike Event">
-      <div class="gallery-caption">
-        <span>Powerful Blue Motorcycle</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-    
-    <section class="schedule-section" id="schedule">
+    </section>
+    <section class="schedule-section fade-in" id="schedule">
       <h2>Event Schedule</h2>
       <div class="schedule-table">
         <div class="schedule-row">
@@ -114,7 +119,7 @@
         </div>
       </div>
     </section>
-    <section class="sponsors-section" id="sponsors">
+    <section class="sponsors-section fade-in" id="sponsors">
       <h2>Our Sponsors</h2>
       <div class="sponsors-logos">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Ferrari_Logo.svg" alt="Ferrari">
@@ -124,7 +129,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Suzuki-logo.svg" alt="Suzuki">
       </div>
     </section>
-    <section class="faq-section" id="faq">
+    <section class="faq-section fade-in" id="faq">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-item">
@@ -145,7 +150,7 @@
         </div>
       </div>
     </section>
-    <section class="map-section" id="contact">
+    <section class="map-section fade-in" id="contact">
       <h2>Event Location</h2>
       <p>Ranikhet, Almora, Uttarakhand, India</p>
       <div class="map-container">
@@ -166,6 +171,16 @@
     </div>
   </footer>
   <script>
+    // Loader
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.opacity = 0;
+        setTimeout(function() {
+          document.getElementById('loader').style.display = 'none';
+        }, 700);
+      }, 800);
+    });
+
     // Collapsible header on scroll
     let lastScrollY = window.scrollY;
     const header = document.querySelector('.collapsible-header');
@@ -190,6 +205,18 @@
         }
       });
     });
+
+    // Section fade-in on scroll
+    function revealOnScroll() {
+      document.querySelectorAll('.fade-in').forEach(function(el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 40) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
   </script>
 </body>
 </html>
