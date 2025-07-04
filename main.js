@@ -1,10 +1,13 @@
 // Loader
 window.addEventListener('load', function() {
   setTimeout(function() {
-    document.getElementById('loader').style.opacity = 0;
-    setTimeout(function() {
-      document.getElementById('loader').style.display = 'none';
-    }, 700);
+    var loader = document.getElementById('loader');
+    if (loader) {
+      loader.style.opacity = 0;
+      setTimeout(function() {
+        loader.style.display = 'none';
+      }, 700);
+    }
   }, 800);
 });
 
