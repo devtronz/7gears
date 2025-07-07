@@ -2,6 +2,8 @@
   <head>
     <!-- Add Google Fonts link for Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       body {
         font-family: 'Montserrat', Arial, sans-serif;
@@ -25,11 +27,39 @@
         letter-spacing: 2px;
         text-shadow: 2px 2px 12px #000;
       }
+      .social-links {
+        position: fixed;
+        left: 0;
+        bottom: 25px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        z-index: 100;
+      }
+      .social-links a {
+        color: #fff;
+        font-size: 2.2em;
+        margin: 0 8px;
+        transition: color 0.3s, transform 0.3s;
+        text-shadow: 2px 2px 8px #000;
+      }
+      .social-links a:hover {
+        color: #ffbe30;
+        transform: scale(1.25) rotate(-8deg);
+      }
     </style> 
   </head>
   <body>
     <div id="header">
       <h1>Travel to the World with 7gears</h1>
+    </div>
+    <!-- Social Media Icons at Bottom -->
+    <div class="social-links">
+    
+      <a href="https://instagram.com/@7.gears_" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
   </body>
 </html>
