@@ -1,21 +1,39 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <!-- Add Google Fonts link for Montserrat -->
+    <meta charset="UTF-8">
+    <title>Travel to the World with 7gears</title>
+    <!-- Google Fonts for Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <!-- Add Font Awesome CDN for social icons -->
+    <!-- Font Awesome CDN for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      body {
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
         font-family: 'Montserrat', Arial, sans-serif;
-        background-video: url('5JOnHH-24d8.mp4');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size:  100% 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      /* Make sure the video covers the whole background */
+      #bg-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        object-fit: cover;
+        background: #000;
+        /* Optional: darken video for readability */
+        filter: brightness(0.6);
       }
       #header {
-        height: 11vw:
         width: 100vw;
-        background: rgba(20, 20, 30, 0.7); /* semi-transparent dark banner */
+        background: rgba(20, 20, 30, 0.7);
         padding: 50px 0 60px 0;
         text-align: center;
         box-sizing: border-box;
@@ -48,56 +66,105 @@
         color: #ffbe30;
         transform: scale(1.25) rotate(-8deg);
       }
-    </style> 
+      /* Gallery styling */
+      .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 1em;
+        flex-wrap: wrap;
+      }
+      .gallery img {
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.28);
+      }
+      /* Registration form styling */
+      #register-rider {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 30px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      }
+      #register-rider h2 {
+        text-align: center;
+        color: #222;
+      }
+      #register-rider label {
+        font-weight: bold;
+      }
+      #register-rider input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      #register-rider button {
+        width: 100%;
+        padding: 10px;
+        background: #ffbe30;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      #register-rider button:hover {
+        background: #e6a826;
+      }
+      @media (max-width: 600px) {
+        #header h1 { font-size: 1.3em; }
+        .gallery img { width: 120px; }
+        #register-rider { padding: 18px; }
+      }
+    </style>
   </head>
   <body>
+    <!-- Playable Video Background -->
+    <video id="bg-video" autoplay muted loop controls>
+      <source src="5JOnHH-24d8.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
     <div id="header">
       <h1>Travel to the World with 7gears</h1>
     </div>
 
+    <!-- Photo Gallery -->
+    <div class="gallery">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WnBfDT2tdgnbUm7RHeMV_nvl_vADPRWHZA&s" alt="Himalayan Biking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrLGWgayMrxRsM3GM8oCeWKZDtP00X9eb61A&s" alt="Mountain Trail">
+      <img src="https://www.adventurenation.com/blog/wp-content/uploads/2016/02/Himalayan-motorbike-trip-1024x683.jpg" alt="Biking Adventure">
+    </div>
 
-<!-- Biking in the Himalayas Section -->
+    <!-- Registration Form -->
+    <div id="register-rider">
+      <h2>Register as Rider</h2>
+      <form>
+        <label for="name">Full Name</label><br>
+        <input type="text" id="name" name="name" required><br>
 
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required><br>
 
+        <label for="phone">Phone Number</label><br>
+        <input type="tel" id="phone" name="phone" required><br>
 
-  <!-- Example Photo Gallery -->
-  <div style="display:flex; justify-content:center; gap:10px; margin-top:1em;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WnBfDT2tdgnbUm7RHeMV_nvl_vADPRWHZA&s" alt="Himalayan Biking" style="width:200px; border-radius:8px;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrLGWgayMrxRsM3GM8oCeWKZDtP00X9eb61A&s" alt="Mountain Trail" style="width:200px; border-radius:8px;">
-    <img src="https://www.adventurenation.com/blog/wp-content/uploads/2016/02/Himalayan-motorbike-trip-1024x683.jpg" alt="Biking Adventure" style="width:200px; border-radius:8px;">
-  </div>
-</section>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" required><br>
 
+        <button type="submit">Register</button>
+      </form>
+    </div>
 
-         </div>
-     <!-- Registration Form Starts Here -->
-     <div id="register-rider" ...>
-       ...form html...
-     </div>
-	 
-	 <div id="register-rider" style="max-width:400px;margin:40px auto;padding:30px;background:rgba(255,255,255,0.85);border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.15);">
-  <h2 style="text-align:center;color:#222;">Register as Rider</h2>
-  <form>
-    <label for="name" style="font-weight:bold;">Full Name</label><br>
-    <input type="text" id="name" name="name" required style="width:100%;padding:8px;margin-bottom:12px;border-radius:5px;border:1px solid #ccc;"><br>
-    
-    <label for="email" style="font-weight:bold;">Email</label><br>
-    <input type="email" id="email" name="email" required style="width:100%;padding:8px;margin-bottom:12px;border-radius:5px;border:1px solid #ccc;"><br>
-    
-    <label for="phone" style="font-weight:bold;">Phone Number</label><br>
-    <input type="tel" id="phone" name="phone" required style="width:100%;padding:8px;margin-bottom:12px;border-radius:5px;border:1px solid #ccc;"><br>
-    
-    <label for="password" style="font-weight:bold;">Password</label><br>
-    <input type="password" id="password" name="password" required style="width:100%;padding:8px;margin-bottom:20px;border-radius:5px;border:1px solid #ccc;"><br>
-    
-    <button type="submit" style="width:100%;padding:10px;background:#ffbe30;color:#fff;font-weight:bold;border:none;border-radius:5px;font-size:1.1em;cursor:pointer;">Register</button>
-  </form>
-</div>
-
-    
     <!-- Social Media Icons at Bottom -->
     <div class="social-links">
-    
       <a href="https://instagram.com/@7.gears_" target="_blank" title="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
