@@ -24,7 +24,39 @@ document.getElementById('register-form').onsubmit = function(e) {
 };
 
 document.getElementById('login-form').onsubmit = function(e) {
-  e.preventDefault();
+  e.preventDefault();  
   // Collect data, send to backend, handle login/session
   alert('Login logic goes here!');
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Registration form submit
+  const regForm = document.getElementById('register-form');
+  if (regForm) {
+    regForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = {
+        name: regForm.name.value,
+        email: regForm.email.value,
+        phone: regForm.phone.value,
+        password: regForm.password.value
+      };
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        const data = await res.json();
+        if (res.ok) {
+          alert('Registration successful!');
+          // Optionally switch to login form
+        } else {
+          alert(data.error || 'Registration failed');
+        }
+      } catch (err) {
+        alert('Network error');
+      }
+    });
+  }
+});
